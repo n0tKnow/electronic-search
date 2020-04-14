@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Search from '../views/Search.vue'
 
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -9,6 +10,16 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Search',
     component: Search
+  },
+  {
+    path: '/result',
+    name: 'result',
+    component: ()=>import('../views/SearchResult.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: ()=>import('../views/Login.vue')
   }
 ]
 

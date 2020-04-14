@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.form.search);
+      this.$router.push("/result");
     }
   }
 };

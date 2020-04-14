@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      activeIndex: "1",
+      activeIndex: "0",
       items: ["首页", "分类", "订阅", "个人中心"],
       user: {
         name: "aabb",
