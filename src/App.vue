@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <NavigationBar/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import NavigationBar from "./components/NavigationBar";
 export default {
-  
-  components:{
-    NavigationBar
-  }
+
 }
 </script>
 
@@ -23,3 +18,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+body{
+  margin:0;
+  padding: 0;
+}
+</style>

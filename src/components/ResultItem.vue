@@ -34,12 +34,14 @@ export default {
   flex: 5;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .title {
   flex: 1;
   font-size:22px;
   margin: 0px 0px;
+  
 }
 .context {
   flex: 2;

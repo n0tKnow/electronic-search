@@ -32,7 +32,6 @@ export default {
   width: 60%;
 }
 .search-box img{
-    padding-left: 25%;
     padding-top: 60px;
     padding-bottom: 60px;
     width: 400px;
