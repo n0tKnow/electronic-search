@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import login from "../net/netUser";
 export default {
   data() {
     return {
@@ -31,12 +32,20 @@ export default {
   },
   methods: {
     onLogin() {
-      window.sessionStorage.setItem("userName", this.form.username);
-      this.$message({
-        message: "登录成功,欢迎你"+this.form.username,
-        type: "success"
+      login(this.form, userData => {
+        window.sessionStorage.setItem("user", JSON.stringify(userData.data));
+        console.log(userData);
+        this.$message({
+          message: "登录成功,欢迎你 " + userData.data.userName,
+          type: "success"
+        });
+        this.$router.push("/");
+      },err=>{
+        this.$message({
+          message: err,
+          type: "warning"
+        });
       });
-      this.$router.push("/");
     },
     onRegister() {
       this.$message({
