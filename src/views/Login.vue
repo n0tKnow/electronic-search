@@ -33,10 +33,11 @@ export default {
   methods: {
     onLogin() {
       login(this.form, userData => {
-        window.sessionStorage.setItem("user", JSON.stringify(userData.data));
+        window.sessionStorage.setItem("user", JSON.stringify(userData.data.user));
+        window.sessionStorage.setItem("token", JSON.stringify(userData.data.token));
         console.log(userData);
         this.$message({
-          message: "登录成功,欢迎你 " + userData.data.userName,
+          message: "登录成功,欢迎你 " + userData.data.user.username,
           type: "success"
         });
         this.$router.push("/");
@@ -52,8 +53,8 @@ export default {
         message: "已注销",
         type: "success"
       });
-      window.sessionStorage.removeItem("userName");
-      this.$router.push("/");
+
+      if(this.$route.path != "Search")this.$router.push("/");
     }
   }
 };

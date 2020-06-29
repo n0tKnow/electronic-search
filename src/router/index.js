@@ -17,6 +17,11 @@ Vue.use(VueRouter)
     component: ()=>import('../views/SearchResult.vue')
   },
   {
+    path: '/compare',
+    name: 'compare',
+    component: ()=>import('../views/Compare.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     component: ()=>import('../views/Login.vue')
