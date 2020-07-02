@@ -15,5 +15,11 @@ npm run serve
 npm run build
 ```
 
+### Deploy with docker
+modify the backend url in default.conf
+```
+docker build -t imageName .
+docker run -d -p outPort:80 --name Youwang imageName
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
