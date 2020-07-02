@@ -21,7 +21,7 @@
           <el-button v-for="f of favors" :key="f.toId" @click="handleCompare(f.toId)">{{f.name}}</el-button>
         </el-collapse-item>
         <el-collapse-item title="文章\评测">
-          <el-card shadow="hover" v-for="f of favors" :key="f.toId">
+          <el-card shadow="hover" v-for="f of favoras " :key="f.toId">
             {{f.name}}
           </el-card>
         </el-collapse-item>
@@ -50,6 +50,7 @@ export default {
         ? JSON.parse(window.sessionStorage.getItem("user"))
         : {},
       favors: [],
+      favoras:[],
       favorClassify: ["手机", "文章评测"]
     };
   },
@@ -108,7 +109,12 @@ export default {
       getfavor()
         .then(res => {
           console.log(res.data);
-          this.favors = res.data.data;
+          this.favors = res.data.data.filter((data)=>{
+            return data.classify == 1;
+          });
+          this.favoras = res.data.data.filter((data)=>{
+            return data.classify == 4;
+          });
         })
         .catch(e => {
           this.$message({ message: "未登录" , type: "warning" });
